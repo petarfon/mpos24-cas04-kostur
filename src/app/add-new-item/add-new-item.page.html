@@ -1,40 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Add New Task</ion-title>
-    <ion-icon name="close-circle-outline" slot="end" size="large" (click)="dismiss()"></ion-icon>
+    <ion-title>AddNewItem</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-content>
-      <!-- Prva stavka card-item -->
-        <ion-item>
-          <ion-textarea [(ngModel)]="taskName" placeholder="Upisi naziv taska"></ion-textarea>
-        </ion-item>
-
-      <!-- Druga stavka card-item  -->
-        <ion-item>
-          <ion-select placeholder="Kategorija" [(ngModel)]="taskCategory">
-            <ion-select-option value="low">Low</ion-select-option>
-            <ion-select-option value="middle">Middle</ion-select-option>
-            <ion-select-option value="high">High</ion-select-option>
-          </ion-select>           
-        </ion-item>
-      
-      <!-- Treca stavka card-item -->
-      <ion-item>
-        <ion-icon name="calendar"></ion-icon>
-        <ion-datetime-button datetime="datetime"></ion-datetime-button>
-        <ion-modal [keepContentsMounted]="true">
-          <ng-template>
-            <ion-datetime id="datetime" [(ngModel)]="taskDate"></ion-datetime>
-          </ng-template>
-        </ion-modal>
-      </ion-item>
-
-      <!-- Dugme za dodavanje -->
-        <ion-button expand="full" (click)="addTask()">Add new task</ion-button>
-    </ion-card-content>
-  </ion-card>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">AddNewItem</ion-title>
+    </ion-toolbar>
+  </ion-header>
 </ion-content>

@@ -5,19 +5,18 @@ import {
   Firestore,
   collectionData,
   doc,
-  deleteDoc, 
-  addDoc
- } from '@angular/fire/firestore';
+  deleteDoc
+} from '@angular/fire/firestore';
 
 //  atributi inferfejsa se moraju poklapati sa poljima u dokumentu Firebase baze podataka
- export interface Task {
+export interface Task {
   id?: number;
   date: string;
   done: boolean;
   name: string;
   category: string;
- }
- 
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +24,7 @@ import {
 
 export class DataService {
 
-  constructor(private firestore: Firestore ) { }
+  constructor(private firestore: Firestore) { }
 
   getTasks() {
     const tasksRef = collection(this.firestore, 'tasks');
@@ -43,5 +42,5 @@ export class DataService {
     const taskRef = doc(this.firestore, `tasks/${task.id}`);
     return deleteDoc(taskRef);
   }
-   
+
 }
