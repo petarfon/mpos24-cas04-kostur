@@ -13,7 +13,8 @@
       <ion-card-header>
         <ion-card-title>{{task.name}}</ion-card-title>
         <ion-item>
-          <ion-icon *ngIf="task.category === 'low' || task.category === 'Low' " name="logo-ionic" color="warning"></ion-icon>
+          <ion-icon *ngIf="task.category === 'low' || task.category === 'Low' " name="logo-ionic"
+            color="warning"></ion-icon>
           <ion-icon *ngIf="task.category === 'high'" name="logo-ionic" color="danger"></ion-icon>
           <ion-label>&nbsp;{{task.category}}</ion-label>
         </ion-item>
@@ -24,8 +25,7 @@
         <p>{{task.date | date:'fullDate'}}</p>
         <ion-row>
           <ion-button (click)="goToUpdatePage(task)">Update</ion-button>
-          <ion-button (click) = "deleteTask(task)">Delete</ion-button>
-          <ion-button>{{task.id}}</ion-button>
+          <ion-button>Delete</ion-button>
         </ion-row>
       </ion-card-content>
     </ion-card>

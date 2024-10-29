@@ -31,16 +31,4 @@ export class DataService {
     return collectionData(tasksRef, { idField: 'id' });
   }
 
-  //sa stringom
-  // deleteTask(id: string) {
-  //   const taskRef = doc(this.firestore, `tasks/${id}`);
-  //   return deleteDoc(taskRef);
-  // }
-
-  //sa celim objektom
-  deleteTask(task: Task) {
-    const taskRef = doc(this.firestore, `tasks/${task.id}`);
-    return deleteDoc(taskRef);
-  }
-
 }

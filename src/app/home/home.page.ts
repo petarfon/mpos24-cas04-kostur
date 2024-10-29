@@ -8,6 +8,12 @@ import { UpdateItemPage } from '../update-item/update-item.page';
 import { DataService } from '../service/data.service';
 import { Subscription } from 'rxjs';
 
+type Task = {
+  name?: string,
+  date?: Date,
+  category?: string,
+}
+
 
 @Component({
   selector: 'app-home',
@@ -22,8 +28,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   constructor(
     public modalCtrl: ModalController,
-    private dataService: DataService) 
-  { }
+    private dataService: DataService) { }
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
@@ -35,14 +40,9 @@ export class HomePage implements OnInit, OnDestroy {
 
   async getData() {
     this.sub = this.dataService.getTasks().subscribe((res) => {
-    this.tasks = res;
-    console.log(this.tasks);
+      this.tasks = res;
+      console.log(this.tasks);
     });
-  }
-
-  async deleteTask(task: any) {
-    // await this.dataService.deleteTask(task.id); //sa stringom
-    await this.dataService.deleteTask(task);
   }
 
   async goToAddPage() {
